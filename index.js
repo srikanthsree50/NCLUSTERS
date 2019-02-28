@@ -1,12 +1,4 @@
-process.env.UV_THREADPOOL_SIZE = 1;
-
-const cluster = require('cluster');
-const crypto = require('crypto');
-if(cluster.isMaster) {
-cluster.fork();
-}
-else {
-    console.log(cluster.isMaster);
+const crypto = require('crypto'); 
 const express = require('express');
 const app = express();
 
@@ -26,4 +18,3 @@ app.listen(8080 , () => {
     console.log('server running at port 8080....')
 });
 
-}
